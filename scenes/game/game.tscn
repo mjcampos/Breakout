@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://v3vjfc66uyxs"]
+[gd_scene load_steps=12 format=3 uid="uid://v3vjfc66uyxs"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qxa4g"]
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dy228gck2qgk4" path="res://assets/yellow-brick.png" id="6_r5yln"]
 [ext_resource type="PackedScene" uid="uid://1po58d2xauqb" path="res://scenes/roof/roof.tscn" id="8_w3q3t"]
 [ext_resource type="PackedScene" uid="uid://jtkrjbyu6cah" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
+[ext_resource type="PackedScene" uid="uid://c21p5pxj4xayy" path="res://scenes/deadzone/dead_zone.tscn" id="11_pm3c8"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxa4g")
@@ -592,7 +593,9 @@ position = Vector2(575, 20)
 [node name="ball" parent="." instance=ExtResource("9_fgs5j")]
 position = Vector2(583, 337)
 
-[node name="Label" type="Label" parent="."]
+[node name="labels" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="labels"]
 offset_left = 54.0
 offset_top = 136.0
 offset_right = 175.0
@@ -601,7 +604,7 @@ theme_override_font_sizes/font_size = 40
 text = "Points"
 horizontal_alignment = 1
 
-[node name="Point Label" type="Label" parent="."]
+[node name="Point Label" type="Label" parent="labels"]
 offset_left = 54.0
 offset_top = 208.0
 offset_right = 175.0
@@ -609,7 +612,7 @@ offset_bottom = 263.0
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="labels"]
 offset_left = 956.0
 offset_top = 136.0
 offset_right = 1077.0
@@ -618,10 +621,13 @@ theme_override_font_sizes/font_size = 40
 text = "Lives"
 horizontal_alignment = 1
 
-[node name="Lives Label" type="Label" parent="."]
+[node name="Lives Label" type="Label" parent="labels"]
 offset_left = 956.0
 offset_top = 209.0
 offset_right = 1077.0
 offset_bottom = 264.0
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
+
+[node name="DeadZone" parent="." instance=ExtResource("11_pm3c8")]
+position = Vector2(576, 637)
