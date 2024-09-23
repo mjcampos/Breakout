@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jtkrjbyu6cah"]
+[gd_scene load_steps=6 format=3 uid="uid://jtkrjbyu6cah"]
 
 [ext_resource type="SpriteFrames" uid="uid://cakiisqccrpi6" path="res://assets/ball_anim.tres" id="1_6wdhw"]
 [ext_resource type="Script" path="res://scenes/ball/ball.gd" id="1_u1xge"]
+[ext_resource type="AudioStream" uid="uid://c0qicjas0y06d" path="res://assets/explosion.wav" id="3_s4lyc"]
+[ext_resource type="AudioStream" uid="uid://ux830ddomsl8" path="res://assets/hit.wav" id="4_pe71k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mrqwn"]
 radius = 8.0
@@ -15,3 +17,10 @@ animation = &"ball_anim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mrqwn")
+
+[node name="ExplosionAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_s4lyc")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pe71k")
+volume_db = 10.0
