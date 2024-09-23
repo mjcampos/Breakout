@@ -13,7 +13,7 @@
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_vjuf3")]
-position = Vector2(472, 587)
+position = Vector2(592, 587)
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2(11, 0)
@@ -588,4 +588,4 @@ position = Vector2(884, 324)
 position = Vector2(575, 20)
 
 [node name="ball" parent="." instance=ExtResource("9_fgs5j")]
-position = Vector2(435, 521)
+position = Vector2(590, 361)
