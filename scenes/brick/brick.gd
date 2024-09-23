@@ -1,3 +1,4 @@
+class_name Brick
 extends StaticBody2D
 
 @export var sprite2D_texture: Texture
