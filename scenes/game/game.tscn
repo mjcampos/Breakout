@@ -1,8 +1,591 @@
-[gd_scene load_steps=2 format=3 uid="uid://v3vjfc66uyxs"]
+[gd_scene load_steps=10 format=3 uid="uid://v3vjfc66uyxs"]
 
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
+[ext_resource type="PackedScene" uid="uid://dvnix3u2t5j4s" path="res://scenes/brick/brick.tscn" id="2_bk577"]
+[ext_resource type="Texture2D" uid="uid://bnjtil7h7oj3r" path="res://assets/orange-brick.png" id="3_7v34r"]
+[ext_resource type="Texture2D" uid="uid://c33kshvg1rseu" path="res://assets/red-brick.png" id="3_vct5g"]
+[ext_resource type="PackedScene" uid="uid://574d4ctlu3d1" path="res://scenes/wall/wall.tscn" id="4_1gsln"]
+[ext_resource type="Texture2D" uid="uid://cg7558vu8nkxf" path="res://assets/green-brick.png" id="5_fus3c"]
+[ext_resource type="Texture2D" uid="uid://dy228gck2qgk4" path="res://assets/yellow-brick.png" id="6_r5yln"]
+[ext_resource type="PackedScene" uid="uid://1po58d2xauqb" path="res://scenes/roof/roof.tscn" id="8_w3q3t"]
+[ext_resource type="PackedScene" uid="uid://crab7dvf66us7" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_vjuf3")]
-position = Vector2(461, 587)
+position = Vector2(472, 587)
+
+[node name="Bricks" type="Node2D" parent="."]
+position = Vector2(11, 0)
+
+[node name="brick" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick2" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick3" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick4" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick5" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick6" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick7" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick8" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(285, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick9" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick10" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick11" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick12" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick13" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick14" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick15" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick16" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(327, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick17" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick18" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick19" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick20" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick21" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick22" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick23" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick24" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(371, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick25" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick26" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick27" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick28" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick29" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick30" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick31" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick32" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(413, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick33" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick34" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick35" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick36" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick37" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick38" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick39" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick40" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(457, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick41" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick42" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick43" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick44" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick45" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick46" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick47" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick48" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(499, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick49" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick50" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick51" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick52" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick53" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick54" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick55" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick56" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(543, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick57" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick58" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick59" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick60" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick61" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick62" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick63" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick64" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(585, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick65" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick66" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick67" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick68" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick69" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick70" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick71" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick72" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(629, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick73" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick74" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick75" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick76" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick77" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick78" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick79" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick80" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(671, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick81" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick82" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick83" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick84" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick85" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick86" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick87" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick88" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(715, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick89" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick90" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick91" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick92" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick93" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick94" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick95" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick96" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(757, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick97" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick98" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick99" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick100" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick101" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick102" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick103" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick104" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(801, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick105" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 113)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick106" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 127)
+sprite2D_texture = ExtResource("3_vct5g")
+_points = 7
+
+[node name="brick107" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 143)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick108" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 157)
+sprite2D_texture = ExtResource("3_7v34r")
+_points = 5
+
+[node name="brick109" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 173)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick110" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 187)
+sprite2D_texture = ExtResource("5_fus3c")
+_points = 3
+
+[node name="brick111" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 203)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="brick112" parent="Bricks" instance=ExtResource("2_bk577")]
+position = Vector2(843, 217)
+sprite2D_texture = ExtResource("6_r5yln")
+_points = 1
+
+[node name="wall" parent="." instance=ExtResource("4_1gsln")]
+position = Vector2(266, 324)
+
+[node name="wall2" parent="." instance=ExtResource("4_1gsln")]
+position = Vector2(884, 324)
+
+[node name="roof" parent="." instance=ExtResource("8_w3q3t")]
+position = Vector2(575, 20)
+
+[node name="ball" parent="." instance=ExtResource("9_fgs5j")]
+position = Vector2(435, 521)

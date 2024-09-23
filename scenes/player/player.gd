@@ -13,9 +13,3 @@ func _physics_process(_delta):
 	velocity.x = direction * _speed
 	
 	move_and_slide()
-	clamp_paddle_position()
-
-func clamp_paddle_position():
-	var width: float = sprite_2d.texture.get_width()
-	
-	position.x = clamp(position.x, width/2, get_viewport_rect().size.x - width/2)
