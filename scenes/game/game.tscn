@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cg7558vu8nkxf" path="res://assets/green-brick.png" id="5_fus3c"]
 [ext_resource type="Texture2D" uid="uid://dy228gck2qgk4" path="res://assets/yellow-brick.png" id="6_r5yln"]
 [ext_resource type="PackedScene" uid="uid://1po58d2xauqb" path="res://scenes/roof/roof.tscn" id="8_w3q3t"]
-[ext_resource type="PackedScene" uid="uid://crab7dvf66us7" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
+[ext_resource type="PackedScene" uid="uid://jtkrjbyu6cah" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
 
 [node name="Game" type="Node2D"]
 
@@ -588,4 +588,4 @@ position = Vector2(884, 324)
 position = Vector2(575, 20)
 
 [node name="ball" parent="." instance=ExtResource("9_fgs5j")]
-position = Vector2(590, 361)
+position = Vector2(583, 337)
