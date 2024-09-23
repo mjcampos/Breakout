@@ -1,3 +1,4 @@
+class_name Brick
 extends StaticBody2D
 
 @export var sprite2D_texture: Texture
@@ -8,3 +9,12 @@ extends StaticBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite_2d.texture = sprite2D_texture
+
+func destroy_brick():
+	# 1. Send points to the Game script
+	var game_script = get_node("/root/Game")
+	
+	game_script.add_points(_points)
+	
+	# 2. Destroy itself
+	queue_free()
