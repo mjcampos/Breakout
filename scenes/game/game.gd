@@ -1,11 +1,15 @@
 extends Node2D
 
 @export var _points: int = 0
+@export var _lives: int = 3
+
+@onready var point_label = $"Point Label"
+@onready var lives_label = $"Lives Label"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	point_label.text = str(_points)
+	lives_label.text = str(_lives)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -13,3 +17,8 @@ func _process(delta):
 
 func add_points(gained_points: int):
 	_points += gained_points
+	point_label.text = str(_points)
+
+func deduct_lives():
+	_lives -= 1
+	lives_label.text = str(_lives)
