@@ -1,6 +1,7 @@
 extends Node
 
-var game_started = false
-
-func toggle_game_start(value: bool):
-	game_started = value
+var game_started: bool = false:
+	get:
+		return game_started
+	set(value):
+		game_started = value

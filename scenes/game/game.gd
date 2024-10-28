@@ -4,8 +4,9 @@ extends Node2D
 @onready var timer = $Timer
 @onready var point_label = $"UI/Point Label"
 @onready var lives_label = $"UI/Lives Label"
+@onready var countdown_label = $UI/CountdownLabel
 
-var countdown: int = 3
+var countdown: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +14,16 @@ func _ready():
 	SignalManager.on_life_lost_label_update.connect(update_lives_display)
 	SignalManager.on_explosion_triggered.connect(play_explosion_sound)
 	
+	# Setup countdown display
+	initial_countdown_display()
+	
 	point_label.text = str(ScoreManager.total_points)
 	lives_label.text = str(LivesManager.lives)
+
+func initial_countdown_display():
+	countdown = 3
+	countdown_label.text = str(countdown)
+	countdown_label.visible = true
 
 func update_score_display():
 	point_label.text = str(ScoreManager.total_points)
@@ -26,12 +35,12 @@ func play_explosion_sound(explosion_loc: Vector2):
 	explosion_sound.position = explosion_loc
 	explosion_sound.play()
 
-
 func _on_timer_timeout():
 	countdown -= 1
 	
 	if countdown > 0:
-		print(countdown)
+		countdown_label.text = str(countdown)
 		timer.start()
 	else:
-		GameManager.toggle_game_start(true)
+		countdown_label.visible = false
+		GameManager.game_started = true
