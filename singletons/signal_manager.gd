@@ -8,3 +8,6 @@ signal on_life_lost_label_update
 
 # Game Scene
 signal on_explosion_triggered
+
+# Game Manager
+signal on_reset_position

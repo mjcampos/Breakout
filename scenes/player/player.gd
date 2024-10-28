@@ -3,10 +3,11 @@ class_name Player
 
 @export var _speed: float = 400.0
 
-var fixed_y_position: float
+var starting_position: Vector2
 
 func _ready():
-	fixed_y_position = position.y
+	SignalManager.on_reset_position.connect(reset_player_position)
+	starting_position = position
 
 func _physics_process(_delta):
 	if GameManager.game_started:
@@ -16,4 +17,7 @@ func _physics_process(_delta):
 		
 		move_and_slide()
 		
-		position.y = fixed_y_position
+		position.y = starting_position.y
+
+func reset_player_position():
+	position = starting_position
