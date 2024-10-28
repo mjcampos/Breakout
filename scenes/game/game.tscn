@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://v3vjfc66uyxs"]
+[gd_scene load_steps=13 format=3 uid="uid://v3vjfc66uyxs"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qxa4g"]
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://1po58d2xauqb" path="res://scenes/roof/roof.tscn" id="8_w3q3t"]
 [ext_resource type="PackedScene" uid="uid://jtkrjbyu6cah" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
 [ext_resource type="PackedScene" uid="uid://c21p5pxj4xayy" path="res://scenes/deadzone/dead_zone.tscn" id="11_pm3c8"]
+[ext_resource type="AudioStream" uid="uid://c0qicjas0y06d" path="res://assets/explosion.wav" id="12_73a00"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxa4g")
@@ -631,3 +632,6 @@ horizontal_alignment = 1
 
 [node name="DeadZone" parent="." instance=ExtResource("11_pm3c8")]
 position = Vector2(576, 637)
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_73a00")

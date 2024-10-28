@@ -14,5 +14,8 @@ func destroy_brick():
 	# 1. Send points to the Game Manager
 	ScoreManager.add_points(_points)
 	
-	# 2. Destroy itself
+	# 2. Trigger explosion sound
+	SignalManager.on_explosion_triggered.emit(position)
+	
+	# 3. Destroy itself
 	queue_free()
