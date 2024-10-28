@@ -11,10 +11,8 @@ func _ready():
 	sprite_2d.texture = sprite2D_texture
 
 func destroy_brick():
-	# 1. Send points to the Game script
-	var game_script = get_node("/root/Game")
-	
-	game_script.add_points(_points)
+	# 1. Send points to the Game Manager
+	ScoreManager.add_points(_points)
 	
 	# 2. Destroy itself
 	queue_free()

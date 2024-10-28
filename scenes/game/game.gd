@@ -1,21 +1,18 @@
-class_name Game
 extends Node2D
-
-@export var _points: int = 0
-@export var _lives: int = 3
 
 @onready var point_label = $"labels/Point Label"
 @onready var lives_label = $"labels/Lives Label"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	point_label.text = str(_points)
-	lives_label.text = str(_lives)
+	SignalManager.on_point_label_update.connect(update_score_display)
+	SignalManager.on_life_lost_label_update.connect(update_lives_display)
+	
+	point_label.text = str(ScoreManager.total_points)
+	lives_label.text = str(LivesManager.lives)
 
-func add_points(gained_points: int):
-	_points += gained_points
-	point_label.text = str(_points)
+func update_score_display():
+	point_label.text = str(ScoreManager.total_points)
 
-func deduct_lives():
-	_lives -= 1
-	lives_label.text = str(_lives)
+func update_lives_display():
+	lives_label.text = str(LivesManager.lives)
