@@ -1,7 +1,5 @@
 extends Node2D
 
-const GAME = preload("res://scenes/game/game.tscn")
-
 @onready var explosion_sound = $ExplosionSound
 @onready var timer = $Timer
 @onready var point_label: Label = $"UI/Point Label"
@@ -15,9 +13,6 @@ var countdown: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Make this game the current scene
-	GameManager.set_current_scene(GAME)
-	
 	# Setup signals
 	SignalManager.on_point_label_update.connect(update_score_display)
 	SignalManager.on_life_lost_label_update.connect(update_lives_display)
@@ -25,6 +20,9 @@ func _ready():
 	SignalManager.on_new_round.connect(initiate_countdown)
 	SignalManager.on_game_over.connect(game_over)
 	SignalManager.on_player_won.connect(player_won)
+	
+	# As extra precaution, ensure game_started is set to false
+	GameManager.game_started = false
 	
 	# Pass along the brick parent node to the Brick Manager singleton to count and track the number of visible bricks in the game
 	BrickManager.count_bricks(brick_parent_node)
@@ -37,7 +35,7 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
-		print("Go back to main menu")
+		GameManager.go_to_main()
 			
 	if not GameManager.game_started:
 		if Input.is_action_just_pressed("reset"):

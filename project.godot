@@ -22,6 +22,7 @@ GameManager="*res://singletons/game_manager.gd"
 ScoreManager="*res://singletons/score_manager.gd"
 LivesManager="*res://singletons/lives_manager.gd"
 BrickManager="*res://singletons/brick_manager.gd"
+BackgroundMusic="*res://singletons/background_music.gd"
 
 [display]
 
