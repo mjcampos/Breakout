@@ -3,11 +3,11 @@ extends Node2D
 @onready var explosion_sound = $ExplosionSound
 @onready var timer = $Timer
 @onready var point_label: Label = $"UI/Point Label"
-@onready var lives_label: Label = $"UI/Lives Label"
 @onready var countdown_label: Label = $UI/CountdownLabel
 @onready var brick_parent_node: Node2D = $Bricks
 @onready var game_over_label: Label = $UI/GameOverLabel
 @onready var player_won_label: Label = $UI/PlayerWonLabel
+@onready var hearts: HBoxContainer = $UI/Hearts
 
 var countdown: int
 
@@ -43,10 +43,10 @@ func _process(delta):
 
 func default_label_settings():
 	point_label.text = str(ScoreManager.total_points)
-	lives_label.text = str(LivesManager.lives)
+	hearts.generate_hearts(LivesManager.lives)  # Set hearts
 	
 	point_label.visible = true
-	lives_label.visible = true
+	hearts.visible = true
 	
 	countdown_label.visible = false
 	game_over_label.visible = false
@@ -62,7 +62,7 @@ func update_score_display():
 	point_label.text = str(ScoreManager.total_points)
 
 func update_lives_display():
-	lives_label.text = str(LivesManager.lives)
+	hearts.generate_hearts(LivesManager.lives)  # Set hearts
 
 func play_explosion_sound(explosion_loc: Vector2):
 	explosion_sound.position = explosion_loc
