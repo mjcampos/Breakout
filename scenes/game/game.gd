@@ -13,17 +13,19 @@ func _ready():
 	SignalManager.on_point_label_update.connect(update_score_display)
 	SignalManager.on_life_lost_label_update.connect(update_lives_display)
 	SignalManager.on_explosion_triggered.connect(play_explosion_sound)
+	SignalManager.on_reset_position.connect(initiate_countdown)
 	
 	# Setup countdown display
-	initial_countdown_display()
+	initiate_countdown()
 	
 	point_label.text = str(ScoreManager.total_points)
 	lives_label.text = str(LivesManager.lives)
 
-func initial_countdown_display():
+func initiate_countdown():
 	countdown = 3
 	countdown_label.text = str(countdown)
 	countdown_label.visible = true
+	timer.start()
 
 func update_score_display():
 	point_label.text = str(ScoreManager.total_points)
