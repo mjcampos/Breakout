@@ -8,4 +8,4 @@ size_flags_horizontal = 6
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_nhq1q")
 autoplay = "default"
-frame_progress = 0.747358
+frame_progress = 0.660054
