@@ -9,7 +9,7 @@ var speed_increase_rate: float = 1.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SignalManager.on_reset_position.connect(reset_ball_position)
+	SignalManager.on_new_round.connect(reset_ball_position)
 	
 	set_random_velocity(initial_speed)
 	

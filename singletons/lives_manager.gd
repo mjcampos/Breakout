@@ -12,3 +12,8 @@ func loose_life():
 		
 		# Call Game Manager to start the reset process
 		GameManager.reset_game()
+	else:
+		# Freeze the gameplay
+		GameManager.game_started = false
+		
+		# Alert the player that the game is over and how many points they won

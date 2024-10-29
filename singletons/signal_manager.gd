@@ -10,4 +10,4 @@ signal on_life_lost_label_update
 signal on_explosion_triggered
 
 # Game Manager
-signal on_reset_position
+signal on_new_round

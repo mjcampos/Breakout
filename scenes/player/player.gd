@@ -6,7 +6,7 @@ class_name Player
 var starting_position: Vector2
 
 func _ready():
-	SignalManager.on_reset_position.connect(reset_player_position)
+	SignalManager.on_new_round.connect(reset_player_position)
 	starting_position = position
 
 func _physics_process(_delta):

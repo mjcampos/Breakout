@@ -9,4 +9,4 @@ var game_started: bool = false:
 func reset_game():
 	game_started = false
 	
-	SignalManager.on_reset_position.emit()
+	SignalManager.on_new_round.emit()

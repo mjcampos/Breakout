@@ -13,7 +13,7 @@ func _ready():
 	SignalManager.on_point_label_update.connect(update_score_display)
 	SignalManager.on_life_lost_label_update.connect(update_lives_display)
 	SignalManager.on_explosion_triggered.connect(play_explosion_sound)
-	SignalManager.on_reset_position.connect(initiate_countdown)
+	SignalManager.on_new_round.connect(initiate_countdown)
 	
 	# Setup countdown display
 	initiate_countdown()
