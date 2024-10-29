@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var hit_audio = $HitAudio
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var speed = 500.0
 var starting_position: Vector2
@@ -13,6 +14,7 @@ func _ready():
 	velocity = Vector2(cos(random_angle), -sin(random_angle)) * speed
 	starting_position = position
 
+	animated_sprite_2d.play()
 func _physics_process(delta):
 	if GameManager.game_started:
 		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
