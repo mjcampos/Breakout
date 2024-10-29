@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qxa4g"]
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
-[ext_resource type="Texture2D" uid="uid://o8cvjc8j4bpp" path="res://assets/background.png" id="2_05uj8"]
+[ext_resource type="PackedScene" uid="uid://megy8r2c5v24" path="res://ui/background.tscn" id="2_5sikt"]
 [ext_resource type="PackedScene" uid="uid://dvnix3u2t5j4s" path="res://scenes/brick/brick.tscn" id="2_bk577"]
 [ext_resource type="Texture2D" uid="uid://bnjtil7h7oj3r" path="res://assets/orange-brick.png" id="3_7v34r"]
 [ext_resource type="Texture2D" uid="uid://c33kshvg1rseu" path="res://assets/red-brick.png" id="3_vct5g"]
@@ -23,9 +23,7 @@ Label/fonts/font = ExtResource("13_cpbyy")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxa4g")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(575, 330)
-texture = ExtResource("2_05uj8")
+[node name="Background" parent="." instance=ExtResource("2_5sikt")]
 
 [node name="Player" parent="." instance=ExtResource("1_vjuf3")]
 position = Vector2(592, 587)
