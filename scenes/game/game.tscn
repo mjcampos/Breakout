@@ -592,7 +592,7 @@ sprite2D_texture = ExtResource("6_r5yln")
 _points = 1
 
 [node name="ball" parent="." instance=ExtResource("9_fgs5j")]
-position = Vector2(583, 337)
+position = Vector2(576, 307)
 
 [node name="DeadZone" parent="." instance=ExtResource("11_pm3c8")]
 position = Vector2(576, 637)
@@ -616,6 +616,7 @@ one_shot = true
 autostart = true
 
 [node name="UI" type="Control" parent="."]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
