@@ -1,8 +1,11 @@
 extends Node2D
 
-@onready var point_label = $"labels/Point Label"
-@onready var lives_label = $"labels/Lives Label"
 @onready var explosion_sound = $ExplosionSound
+@onready var timer = $Timer
+@onready var point_label = $"Control/Point Label"
+@onready var lives_label = $"Control/Lives Label"
+
+var countdown: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,3 +25,13 @@ func update_lives_display():
 func play_explosion_sound(explosion_loc: Vector2):
 	explosion_sound.position = explosion_loc
 	explosion_sound.play()
+
+
+func _on_timer_timeout():
+	countdown -= 1
+	
+	if countdown > 0:
+		print(countdown)
+		timer.start()
+	else:
+		GameManager.toggle_game_start(true)

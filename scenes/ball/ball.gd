@@ -11,16 +11,17 @@ func _ready():
 	velocity = Vector2(cos(random_angle), -sin(random_angle)) * speed
 
 func _physics_process(delta):
-	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
-	
-	if collision:
-		velocity = velocity.bounce(collision.get_normal())
+	if GameManager.game_started:
+		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 		
-		# If ball hits Brick trigger its destruction
-		var collider: Object = collision.get_collider()
-		
-		if collider is Brick:
-			collider.destroy_brick()
-		else:
-			hit_audio.position = position
-			hit_audio.play()
+		if collision:
+			velocity = velocity.bounce(collision.get_normal())
+			
+			# If ball hits Brick trigger its destruction
+			var collider: Object = collision.get_collider()
+			
+			if collider is Brick:
+				collider.destroy_brick()
+			else:
+				hit_audio.position = position
+				hit_audio.play()

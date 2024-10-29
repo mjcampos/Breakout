@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://v3vjfc66uyxs"]
+[gd_scene load_steps=15 format=3 uid="uid://v3vjfc66uyxs"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qxa4g"]
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://jtkrjbyu6cah" path="res://scenes/ball/ball.tscn" id="9_fgs5j"]
 [ext_resource type="PackedScene" uid="uid://c21p5pxj4xayy" path="res://scenes/deadzone/dead_zone.tscn" id="11_pm3c8"]
 [ext_resource type="AudioStream" uid="uid://c0qicjas0y06d" path="res://assets/explosion.wav" id="12_73a00"]
+[ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="13_cpbyy"]
+
+[sub_resource type="Theme" id="Theme_bx1ai"]
+Label/colors/font_color = Color(1, 0, 0.2, 1)
+Label/fonts/font = ExtResource("13_cpbyy")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qxa4g")
@@ -582,21 +587,41 @@ position = Vector2(843, 217)
 sprite2D_texture = ExtResource("6_r5yln")
 _points = 1
 
-[node name="wall" parent="." instance=ExtResource("4_1gsln")]
-position = Vector2(266, 324)
-
-[node name="wall2" parent="." instance=ExtResource("4_1gsln")]
-position = Vector2(884, 324)
-
-[node name="roof" parent="." instance=ExtResource("8_w3q3t")]
-position = Vector2(575, 20)
-
 [node name="ball" parent="." instance=ExtResource("9_fgs5j")]
 position = Vector2(583, 337)
 
-[node name="labels" type="Node2D" parent="."]
+[node name="DeadZone" parent="." instance=ExtResource("11_pm3c8")]
+position = Vector2(576, 637)
 
-[node name="Label" type="Label" parent="labels"]
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_73a00")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="wall" parent="Walls" instance=ExtResource("4_1gsln")]
+position = Vector2(266, 324)
+
+[node name="wall2" parent="Walls" instance=ExtResource("4_1gsln")]
+position = Vector2(884, 324)
+
+[node name="roof" parent="Walls" instance=ExtResource("8_w3q3t")]
+position = Vector2(575, 20)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bx1ai")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 136.0
 offset_right = 175.0
@@ -605,15 +630,21 @@ theme_override_font_sizes/font_size = 40
 text = "Points"
 horizontal_alignment = 1
 
-[node name="Point Label" type="Label" parent="labels"]
+[node name="Point Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 208.0
 offset_right = 175.0
 offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.898039, 0.898039, 0.898039, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 40
+text = "0"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="labels"]
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 956.0
 offset_top = 136.0
 offset_right = 1077.0
@@ -622,16 +653,17 @@ theme_override_font_sizes/font_size = 40
 text = "Lives"
 horizontal_alignment = 1
 
-[node name="Lives Label" type="Label" parent="labels"]
+[node name="Lives Label" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 956.0
 offset_top = 209.0
 offset_right = 1077.0
 offset_bottom = 264.0
+theme_override_colors/font_color = Color(0.898039, 0.898039, 0.898039, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 40
+text = "3"
 horizontal_alignment = 1
 
-[node name="DeadZone" parent="." instance=ExtResource("11_pm3c8")]
-position = Vector2(576, 637)
-
-[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("12_73a00")
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
