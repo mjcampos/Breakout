@@ -17,5 +17,8 @@ func destroy_brick():
 	# 2. Trigger explosion sound
 	SignalManager.on_explosion_triggered.emit(position)
 	
-	# 3. Destroy itself
+	# 3. Alert Brick Manager to deduct a brick from its count
+	BrickManager.deduct_brick()
+	
+	# 4. Destroy itself
 	queue_free()

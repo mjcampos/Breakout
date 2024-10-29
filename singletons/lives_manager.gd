@@ -11,10 +11,13 @@ func loose_life():
 		
 	if lives > 0:
 		# Call Game Manager to start the reset process
-		GameManager.reset_game()
+		GameManager.start_new_round()
 	else:
 		# Freeze the gameplay
 		GameManager.game_started = false
 		
 		# Alert the player that the game is over and how many points they won
 		SignalManager.on_game_over.emit()
+
+func reset_lives():
+	lives = 3

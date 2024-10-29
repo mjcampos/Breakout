@@ -12,3 +12,6 @@ signal on_explosion_triggered
 
 # Game Manager
 signal on_new_round
+
+# Brick Manager
+signal on_player_won

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://v3vjfc66uyxs"]
+[gd_scene load_steps=17 format=3 uid="uid://v3vjfc66uyxs"]
 
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_qxa4g"]
 [ext_resource type="PackedScene" uid="uid://chj3an502bm7q" path="res://scenes/player/player.tscn" id="1_vjuf3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c21p5pxj4xayy" path="res://scenes/deadzone/dead_zone.tscn" id="11_pm3c8"]
 [ext_resource type="AudioStream" uid="uid://c0qicjas0y06d" path="res://assets/explosion.wav" id="12_73a00"]
 [ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="13_cpbyy"]
+[ext_resource type="LabelSettings" uid="uid://c1mersso4wj2q" path="res://ui/over_label.tres" id="15_1ould"]
 
 [sub_resource type="Theme" id="Theme_bx1ai"]
 Label/colors/font_color = Color(1, 0, 0.2, 1)
@@ -690,17 +691,42 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EndGameLabel" type="Label" parent="UI"]
+[node name="GameOverLabel" type="Label" parent="UI"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 255.0
-offset_top = -2.0
-offset_right = 897.0
-offset_bottom = 645.0
+offset_left = 272.0
+offset_top = 163.0
+offset_right = 877.0
+offset_bottom = 486.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "You won!!!"
+text = "Game over with a score of %d points!!!
+
+Press R to play again, or ESC to go back to the main menu."
+label_settings = ExtResource("15_1ould")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayerWonLabel" type="Label" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 273.0
+offset_top = 175.0
+offset_right = 877.0
+offset_bottom = 474.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Congratulations you won!!!
+
+Press R to play again, or ESC to go back to the main menu."
+label_settings = ExtResource("15_1ould")
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

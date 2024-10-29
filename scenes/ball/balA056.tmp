@@ -408,7 +408,7 @@ shape = SubResource("CircleShape2D_mrqwn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qikot")
-frame_progress = 0.0932824
+frame_progress = 0.63049
 
 [node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_pe71k")
