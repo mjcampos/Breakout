@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ilhdt0n7hjr"]
+
+[ext_resource type="SpriteFrames" uid="uid://bkbltutpjsset" path="res://ui/heartbeat.tres" id="1_nhq1q"]
+
+[node name="Heart" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_nhq1q")
+autoplay = "default"
+frame_progress = 0.834249
