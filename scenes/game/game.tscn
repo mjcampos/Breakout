@@ -16,6 +16,7 @@
 
 [sub_resource type="Theme" id="Theme_bx1ai"]
 Label/colors/font_color = Color(1, 0, 0.2, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
 Label/fonts/font = ExtResource("13_cpbyy")
 
 [node name="Game" type="Node2D"]
@@ -611,7 +612,7 @@ position = Vector2(575, 20)
 one_shot = true
 autostart = true
 
-[node name="Control" type="Control" parent="."]
+[node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -620,17 +621,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_bx1ai")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 136.0
 offset_right = 175.0
 offset_bottom = 191.0
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
 text = "Points"
 horizontal_alignment = 1
 
-[node name="Point Label" type="Label" parent="Control"]
+[node name="Point Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 54.0
 offset_top = 208.0
@@ -643,17 +645,18 @@ theme_override_font_sizes/font_size = 40
 text = "0"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control"]
+[node name="Label2" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 956.0
 offset_top = 136.0
 offset_right = 1077.0
 offset_bottom = 191.0
+theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 40
 text = "Lives"
 horizontal_alignment = 1
 
-[node name="Lives Label" type="Label" parent="Control"]
+[node name="Lives Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 956.0
 offset_top = 209.0
@@ -665,5 +668,17 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 40
 text = "3"
 horizontal_alignment = 1
+
+[node name="CountdownLabel" type="Label" parent="UI"]
+layout_mode = 1
+offset_left = 563.0
+offset_top = 263.0
+offset_right = 596.0
+offset_bottom = 325.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

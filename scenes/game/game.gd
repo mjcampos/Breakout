@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var explosion_sound = $ExplosionSound
 @onready var timer = $Timer
-@onready var point_label = $"Control/Point Label"
-@onready var lives_label = $"Control/Lives Label"
+@onready var point_label = $"UI/Point Label"
+@onready var lives_label = $"UI/Lives Label"
 
 var countdown: int = 3
 
