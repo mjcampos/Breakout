@@ -123,3 +123,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_btmow")
 text = "Settings"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

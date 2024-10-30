@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwh25ugohnvhi"]
+
+[ext_resource type="Theme" path="res://assets/custom_theme_control.tres" id="1_q62es"]
+[ext_resource type="PackedScene" uid="uid://megy8r2c5v24" path="res://ui/background.tscn" id="2_38254"]
+[ext_resource type="Script" path="res://scenes/settings/settings.gd" id="2_schiv"]
+[ext_resource type="FontFile" uid="uid://cncs75jep76dh" path="res://assets/fonts/PixeloidSansBold-PKnYd.ttf" id="3_18up0"]
+[ext_resource type="FontFile" uid="uid://gmqjlwnmey56" path="res://assets/fonts/PixeloidSans-mLxMm.ttf" id="4_38ytq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kimr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ud3ut"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi2t1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukele"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4gty"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agmwa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q62es")
+script = ExtResource("2_schiv")
+
+[node name="Background" parent="." instance=ExtResource("2_38254")]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 34.0
+offset_right = 214.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_18up0")
+theme_override_font_sizes/font_size = 80
+text = "Settings"
+
+[node name="ResetRecordButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -94.0
+offset_right = 110.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_38ytq")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kimr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ud3ut")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_yi2t1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ukele")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b4gty")
+theme_override_styles/normal = SubResource("StyleBoxFlat_agmwa")
+text = "Reset Record"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 151.0
+offset_right = 110.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_38ytq")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_1kimr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ud3ut")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_yi2t1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ukele")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b4gty")
+theme_override_styles/normal = SubResource("StyleBoxFlat_agmwa")
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

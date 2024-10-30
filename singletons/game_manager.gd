@@ -2,6 +2,7 @@ extends Node
 
 const GAME = preload("res://scenes/game/game.tscn")
 const MAIN = preload("res://scenes/main/main.tscn")
+const SETTINGS = preload("res://scenes/settings/settings.tscn")
 
 var game_started: bool = false:
 	get:
@@ -27,3 +28,6 @@ func go_to_main():
 	get_tree().change_scene_to_packed(MAIN)
 	ScoreManager.reset_points()
 	LivesManager.reset_lives()
+
+func go_to_settings():
+	get_tree().change_scene_to_packed(SETTINGS)
