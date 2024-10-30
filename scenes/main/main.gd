@@ -2,9 +2,19 @@ extends Control
 
 @onready var play_button: Button = $PlayButton
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("ui_right"):
-		play_button.grab_focus()
+func _ready():
+	Input.joy_connection_changed.connect(on_joy_connection_changed)
 
 func _on_play_button_pressed():
 	GameManager.go_to_game()
+
+func remove_focus_from_all_buttons():
+	for child in get_children():
+		if child is Button:
+			child.release_focus()
+
+func on_joy_connection_changed(device: int, connected: bool):
+	if connected:
+		play_button.grab_focus()
+	else:
+		remove_focus_from_all_buttons()
