@@ -73,7 +73,7 @@ theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_yi2t1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ukele")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b4gty")
 theme_override_styles/normal = SubResource("StyleBoxFlat_agmwa")
-text = "Reset Record"
+text = "Reset Record Score"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
