@@ -11,7 +11,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if GameManager.game_started:
-		var direction = Input.get_axis("ui_left", "ui_right")
+		var direction = Input.get_axis("left", "right")
 		
 		velocity.x = direction * _speed
 		
