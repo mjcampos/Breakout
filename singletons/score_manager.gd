@@ -38,3 +38,7 @@ func save_high_score_to_file():
 	if file:
 		file.store_32(high_score)
 		file.close()
+
+func reset_high_score():
+	high_score = 0
+	save_high_score_to_file()
