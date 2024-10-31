@@ -8,6 +8,7 @@ extends Node2D
 @onready var game_over_label: Label = $UI/GameOverLabel
 @onready var player_won_label: Label = $UI/PlayerWonLabel
 @onready var hearts: HBoxContainer = $UI/Hearts
+@onready var record_label: Label = $UI/RecordLabel
 
 var countdown: int
 
@@ -20,6 +21,7 @@ func _ready():
 	SignalManager.on_new_round.connect(initiate_countdown)
 	SignalManager.on_game_over.connect(game_over)
 	SignalManager.on_player_won.connect(player_won)
+	SignalManager.on_high_score_loaded.connect(update_record_display)
 	
 	# As extra precaution, ensure game_started is set to false
 	GameManager.game_started = false
@@ -32,6 +34,9 @@ func _ready():
 	
 	# Initiate the countdown to begin the scene
 	initiate_countdown()
+	
+	# Load the high score
+	ScoreManager.load_high_score()
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -45,9 +50,12 @@ func default_label_settings():
 	point_label.text = str(ScoreManager.total_points)
 	hearts.generate_hearts(LivesManager.lives)  # Set hearts
 	
+	# These labels must always be visible
 	point_label.visible = true
 	hearts.visible = true
+	record_label.visible = true
 	
+	# These labels are visible only on certain conditions
 	countdown_label.visible = false
 	game_over_label.visible = false
 	player_won_label.visible = false
@@ -84,3 +92,6 @@ func game_over():
 
 func player_won():
 	player_won_label.visible = true
+
+func update_record_display():
+	record_label.text = str(ScoreManager.high_score)

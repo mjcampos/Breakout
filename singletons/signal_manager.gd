@@ -10,6 +10,7 @@ signal on_game_over
 # Game Scene
 signal on_explosion_triggered
 signal on_ball_hit_roof
+signal on_high_score_loaded
 
 # Game Manager
 signal on_new_round

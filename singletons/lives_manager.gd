@@ -18,6 +18,8 @@ func loose_life():
 		
 		# Alert the player that the game is over and how many points they won
 		SignalManager.on_game_over.emit()
-
+		
+		# Save the score if it broke the record
+		ScoreManager.save_high_score_to_file()
 func reset_lives():
 	lives = 3
