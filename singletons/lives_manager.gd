@@ -21,5 +21,6 @@ func loose_life():
 		
 		# Save the score if it broke the record
 		ScoreManager.save_high_score_to_file()
+
 func reset_lives():
 	lives = 3
