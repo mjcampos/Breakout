@@ -30,6 +30,9 @@ func _physics_process(delta):
 				collider.destroy_brick()
 				velocity = velocity * speed_increase_rate
 			else:
+				if collider.is_in_group("Roof"):
+					GameManager.ball_hit_roof()
+				
 				hit_audio.position = position
 				hit_audio.play()
 

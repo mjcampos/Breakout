@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jerag"]
 size = Vector2(638, 40)
 
-[node name="roof" type="StaticBody2D"]
+[node name="roof" type="StaticBody2D" groups=["Roof"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u12ix")

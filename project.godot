@@ -28,6 +28,10 @@ BackgroundMusic="*res://singletons/background_music.gd"
 
 window/stretch/mode="canvas_items"
 
+[global_group]
+
+Roof=""
+
 [input]
 
 ui_accept={
